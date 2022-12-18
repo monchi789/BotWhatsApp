@@ -5,6 +5,8 @@ import openpyxl
 
 def bot(nombreExcel, columnaNombre, columnaNumero, filaInicio, filaFinal, mensaje):
 
+    texto = mensaje
+
     book = openpyxl.load_workbook('./docs/' + nombreExcel + '.xlsx')
     sheet = book.active
 
@@ -18,7 +20,7 @@ def bot(nombreExcel, columnaNombre, columnaNumero, filaInicio, filaFinal, mensaj
         numero = str(sheet[columnaNumero + f'{i}'].value)
         if(numero[0] == '9'):
             numero = '+51' + numero
-            mensaje = '➡️ Hola, ' + str(sheet[ columnaNombre + f'{i}'].value) + '. ' + mensaje
+            mensaje = '➡️ Hola, ' + str(sheet[ columnaNombre + f'{i}'].value) + '. ' + texto
             pywhatkit.sendwhatmsg_instantly( numero,
                         mensaje,
                         15,

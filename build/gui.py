@@ -288,13 +288,14 @@ canvas.create_text(
     font=("RobotoRoman Bold", 15 * -1)
 )
 
+
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
 button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: bot(nombreExcel.get(), columnaNombre.get(), columnaNumero.get(), filaInicio.get(), filaFinal.get(), mensaje.get()),
+    command= lambda: bot(nombreExcel.get(), columnaNombre.get(), columnaNumero.get(), filaInicio.get(), filaFinal.get(), mensaje.get()),
     relief="flat"
 )
 button_1.place(
